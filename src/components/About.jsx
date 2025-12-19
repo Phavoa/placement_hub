@@ -17,7 +17,7 @@ function About() {
       <Workflow />
       <AboutVideo />
       <Services />
-      <Team />
+      {/* <Team /> */}
       <div className="transition">
         <div className="transition-content">
           <h1 className="transit">Transition into Tech Today!</h1>

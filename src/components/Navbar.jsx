@@ -104,9 +104,9 @@ function Navbar() {
         <li>
           <a href="/courses">Courses</a>
         </li>
-        <li>
+        {/* <li>
           <a href="#about">Placement</a>
-        </li>
+        </li> */}
         <li>
           <a href="/about">About</a>
         </li>
