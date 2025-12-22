@@ -185,7 +185,7 @@ const ContactUs = () => {
   // Course options for the dropdown
   const courseOptions = [
     "Ethical Hacking & Cyber Security",
-    "Python For Data Analysis",
+    "Data Analysis",
     "Full Stack",
     "DevOps & System Administration",
     "AI Integration For Professionals",

@@ -21,7 +21,7 @@ const cardData = [
     ],
   },
   {
-    title: "Python For Data Analysis",
+    title: "Data Analysis",
     image: DataAnalytics,
     bgColor: "bg-cyber",
     list: [
