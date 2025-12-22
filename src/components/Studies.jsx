@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CyberImg from "../assets/cybersecurity-img.png";
 import DevOpsImg from "../assets/devops-img.png";
 import DataAnalytics from "../assets/data-analytics-img.png";
 import AIML from "../assets/ai-img.png";
-import Fullstack from "../assets/fullstack.jpg";
+import FullStack from "../assets/fullstack.jpg";
 
 const cardData = [
   {
@@ -35,7 +35,7 @@ const cardData = [
   },
   {
     title: "Full Stack",
-    image: Fullstack,
+    image: FullStack,
     bgColor: "bg-devops",
     list: [
       "Frontend Technologies: HTML, CSS, JavaScript",
@@ -77,6 +77,20 @@ const cardData = [
 
 function Card() {
   const navigate = useNavigate();
+  const [visibleCards, setVisibleCards] = useState([]);
+
+  useEffect(() => {
+    // Staggered animation effect
+    const timer = setTimeout(() => {
+      cardData.forEach((_, index) => {
+        setTimeout(() => {
+          setVisibleCards((prev) => [...prev, index]);
+        }, index * 200);
+      });
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleEnrollClick = (courseTitle) => {
     navigate("/contact", {
@@ -88,37 +102,38 @@ function Card() {
   };
 
   return (
-    <div className="app-container">
-      {cardData.map((item, index) => (
-        <div
-          className="card"
-          key={index}
-          style={{
-            backgroundImage: `url(${item.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className={`card-content ${item.bgColor}`}>
-            <h3>{item.title}</h3>
-            <ul>
-              {item.list.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-            <div className="buttons">
-              <button
-                className="enrol"
-                onClick={() => handleEnrollClick(item.title)}
-              >
-                Enrol Now
-              </button>
-              {/* <button className="explore">Explore →</button> */}
+    <div className="courses-grid-container">
+      <div className="app-container">
+        {cardData.map((item, index) => (
+          <div
+            className={`card ${visibleCards.includes(index) ? "card-visible" : "card-hidden"}`}
+            key={index}
+            style={{
+              backgroundImage: `url(${item.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className={`card-content ${item.bgColor}`}>
+              <h3>{item.title}</h3>
+              <ul>
+                {item.list.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+              <div className="buttons">
+                <button
+                  className="enrol"
+                  onClick={() => handleEnrollClick(item.title)}
+                >
+                  Enrol Now
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
