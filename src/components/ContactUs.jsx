@@ -184,10 +184,11 @@ const ContactUs = () => {
 
   // Course options for the dropdown
   const courseOptions = [
-    "Cybersecurity",
+    "Ethical Hacking & Cyber Security",
+    "Python For Data Analysis",
+    "Full Stack",
     "DevOps & System Administration",
-    "Data Analytics",
-    "AI & Machine Learning",
+    "AI Integration For Professionals",
   ];
 
   return (

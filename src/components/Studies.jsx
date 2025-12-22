@@ -4,19 +4,46 @@ import CyberImg from "../assets/cybersecurity-img.png";
 import DevOpsImg from "../assets/devops-img.png";
 import DataAnalytics from "../assets/data-analytics-img.png";
 import AIML from "../assets/ai-img.png";
+import Fullstack from "../assets/fullstack.jpg";
 
 const cardData = [
   {
-    title: "Cybersecurity",
+    title: "Ethical Hacking & Cyber Security",
     image: CyberImg,
     bgColor: "bg-cyber",
     list: [
-      "Introduction to Cybersecurity",
+      "Introduction to Cybersecurity and Ethical Hacking",
       "Understanding Devices, Networks & the Internet",
       "Cyber Threats and Attack Vectors",
-      "Protecting Yourself Online",
+      "Penetration Testing and Vulnerability Assessment",
       "Introduction to Security Tools and Practices",
-      "Careers in Cybersecurity and Next Steps",
+      "Legal and Ethical Considerations in Hacking",
+    ],
+  },
+  {
+    title: "Python For Data Analysis",
+    image: DataAnalytics,
+    bgColor: "bg-cyber",
+    list: [
+      "Intro to Data Analytics and the Data Lifecycle",
+      "Python Programming Basics for Data Analysis",
+      "Data Cleaning and Preparation with Python",
+      "Data Visualization with Matplotlib and Seaborn",
+      "Working with Pandas and NumPy Libraries",
+      "Interpreting Results and Telling Data Stories",
+    ],
+  },
+  {
+    title: "Full Stack",
+    image: Fullstack,
+    bgColor: "bg-devops",
+    list: [
+      "Frontend Technologies: HTML, CSS, JavaScript",
+      "Bootstrap Framework for Responsive Design",
+      "Next JS for Modern Frontend Development",
+      "Python Backend Development",
+      "Database Integration and API Development",
+      "Full Stack Project Development and Deployment",
     ],
   },
   {
@@ -34,29 +61,16 @@ const cardData = [
     ],
   },
   {
-    title: "Data Analytics",
-    image: DataAnalytics,
+    title: "AI Integration For Professionals",
+    image: AIML,
     bgColor: "bg-cyber",
     list: [
-      "Intro to Data Analytics and the Data Lifecycle",
-      "Types of Data and Data Sources",
-      "Basics of Data Cleaning and Preparation",
-      "Intro to Data Visualization",
-      "Tools Overview: Excel, SQL, Python, Tableau",
-      "Interpreting Results and Telling Data Stories",
-    ],
-  },
-  {
-    title: "AI & Machine Learning",
-    image: AIML,
-    bgColor: "bg-devops",
-    list: [
-      "Intro to Artificial Intelligence and ML",
-      "Types of ML: Supervised, Unsupervised, Reinforcement",
-      "Key Concepts: Algorithms, Models, Training & Testing",
-      "Basic Statistics and Linear Algebra for ML",
-      "Common Tools: Python, scikit-learn, TensorFlow",
-      "Applications and Ethics of AI in the Real World",
+      "AI Integration for Healthcare Specialists",
+      "AI Integration for Finance & Accounting Professionals",
+      "AI Integration for Teachers",
+      "Understanding AI Tools and Applications",
+      "Implementing AI Solutions in Professional Workflows",
+      "Ethics and Best Practices in AI Integration",
     ],
   },
 ];
