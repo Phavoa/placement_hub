@@ -219,6 +219,30 @@
   .about-hero-content p {
     font-size: 20px;
   }
+
+  /* Touch-friendly enhancements for mobile navigation */
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 6px;
+  }
+
+  .navbar-links {
+    transition: all 0.3s ease;
+  }
+
+  .navbar-links li a {
+    min-height: 44px;
+    padding: 12px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-btn {
+    min-height: 44px;
+    padding: 12px 20px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -496,5 +520,31 @@
   .play-button-overlay:focus {
     outline: 2px solid #ec4899;
     outline-offset: 2px;
+  }
+}
+
+/* Home component mobile responsiveness */
+@media (max-width: 768px) {
+  .home-container {
+    /* Mobile adjustment: Add horizontal padding to prevent content from touching screen edges on tablets and phones */
+    padding: 0 1rem;
+    /* Ensure vertical stacking for seamless mobile scrolling */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-buttons .get-started,
+  .hero-buttons .learn-more {
+    /* Touch-friendly: Increase padding and min-height for better touch targets on mobile */
+    padding: 12px 40px;
+    min-height: 48px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    /* Further mobile adjustment: Reduce padding on very small screens for more content space */
+    padding: 0 0.5rem;
   }
 }

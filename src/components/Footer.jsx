@@ -105,7 +105,7 @@ function Footer() {
         <div className="social-media">
           <div className="social-icons">
             <a
-              href="https://wa.me/2349068520591?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+              href="https://chat.whatsapp.com/GqOVZloiq2Z7qwVZCcxtJX"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Contact us on WhatsApp"

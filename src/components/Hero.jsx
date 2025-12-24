@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Hero1 from "../assets/hero-new1.png";
-import Hero2 from "../assets/hero-new2.jpg"; 
+import Hero2 from "../assets/hero-new2.jpg";
 import Hero3 from "../assets/hero-new3.jpg";
 import Hero4 from "../assets/hero-new4.jpg";
 
@@ -29,7 +29,9 @@ function HeroSection() {
       }}
     >
       <div className="hero-content">
-        <h1 className="hero-title">Join the Next Generation of Tech Leaders!</h1>
+        <h1 className="hero-title">
+          Join the Next Generation of Tech Leaders!
+        </h1>
         <p className="hero-subtitle">
           Become a Globally Relevant Tech Expert; <br />
           Learn Cybersecurity, DevOps, Data Analytics, and AI/ML.

@@ -7,23 +7,19 @@ import Subscribe from "./Subscribe";
 import Footer from "./Footer";
 import Cards from "./Cards";
 
-
-
 function Home() {
   return (
     <div className="App">
-        <Navbar />
-        <Hero />
-        <Started />
-        <Transform />
-        <Inspired />
-        <Cards />
-        <Subscribe />
-        <Footer />
-        
+      <Navbar />
+      <Hero />
+      <Started />
+      <Transform />
+      <Inspired />
+      <Cards />
+      <Subscribe />
+      <Footer />
     </div>
   );
-};
-
+}
 
 export default Home;
