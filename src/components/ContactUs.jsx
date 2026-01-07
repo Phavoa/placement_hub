@@ -121,6 +121,33 @@ const ContactUs = () => {
 
     setLoading(true);
 
+    let emailSuccess = false;
+    let apiSuccess = false;
+
+    // Send to Google Sheets API
+    try {
+      const apiResponse = await fetch(
+        "https://script.google.com/macros/s/AKfycbx8RRWxsDepaUB3ZcelS4-QEJsLSuomg6ZkZMS8MK0Gbd3C_0v8q4wnAhmT95ifyyVf/exec",
+        {
+          method: "POST",
+          mode: "cors",
+          body: JSON.stringify({
+            Name: formData.user_name,
+            Email: formData.user_email,
+            Phone: formData.user_phone,
+            Course: formData.selected_course,
+            Message: formData.message,
+          }),
+        }
+      );
+      if (apiResponse.ok) {
+        apiSuccess = true;
+      }
+    } catch (error) {
+      console.error("API error:", error);
+    }
+
+    // Send email via EmailJS
     try {
       // Prepare email data with all recipients
       const emailData = {
@@ -157,9 +184,15 @@ const ContactUs = () => {
         EMAILJS_CONFIG.publicKey
       );
 
-      setSubmitted(true);
-      setLoading(false);
+      emailSuccess = true;
+    } catch (error) {
+      console.error("Email send error:", error);
+    }
 
+    setLoading(false);
+
+    if (emailSuccess && apiSuccess) {
+      setSubmitted(true);
       // Reset form after successful submission
       setFormData({
         user_name: "",
@@ -168,12 +201,19 @@ const ContactUs = () => {
         selected_course: "",
         message: "",
       });
-
       // Clear navigation state to prevent re-population on page refresh
       window.history.replaceState({}, document.title);
-    } catch (error) {
-      console.error("Email send error:", error);
-      setLoading(false);
+    } else if (emailSuccess && !apiSuccess) {
+      setErrors({
+        submit:
+          "Email sent successfully, but data could not be saved to the sheet. Please try again or contact support.",
+      });
+    } else if (!emailSuccess && apiSuccess) {
+      setErrors({
+        submit:
+          "Data saved to sheet, but email could not be sent. Please contact support if needed.",
+      });
+    } else {
       setErrors({ submit: "Something went wrong. Please try again." });
     }
   };
